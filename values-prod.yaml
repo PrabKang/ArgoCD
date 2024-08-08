@@ -1,0 +1,8 @@
+# values-prod.yaml
+
+replicaCount: 3
+
+service:
+  type: NodePort
+  port: 30002
+s

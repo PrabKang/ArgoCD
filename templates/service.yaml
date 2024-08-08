@@ -1,0 +1,16 @@
+# templates/service.yaml
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "juice-shop.fullname" . }}
+  labels:
+    {{- include "juice-shop.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: 80
+      targetPort: 3000
+      nodePort: {{ .Values.service.port }}
+  selector:
+    {{- include "juice-shop.selectorLabels" . | nindent 4 }}
