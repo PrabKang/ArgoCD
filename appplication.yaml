@@ -6,18 +6,18 @@ metadata:
 spec:
   project: default
 
-source:
-  repoURL: https://github.com/PrabKang/juice-shop-helm.git
-  targetRevision: HEAD
-  path: dev
-destination:
-  server: https://kubernetes.default.svc
-  namespace: myapp
+  source:
+    repoURL: https://github.com/PrabKang/juice-shop-helm.git
+    targetRevision: HEAD
+    path: dev
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: myapp
 
-syncPolicy:
-  syncOptions:
-  - CreateNameSpace=true
+  syncPolicy:
+    syncOptions:
+    - CreateNameSpace=true
 
-  automated:
-    selfHeal: true
-    prune: true
+    automated:
+      selfHeal: true
+      prune: true
