@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application 
 metadata:
-  name: argo-application-dev
+  name: argo-application-prod
   namespace: argocd
 spec:
   project: default
@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://github.com/PrabKang/juice-shop-helm.git
     targetRevision: HEAD
-    path: dev
+    path: prod
   destination:
     server: https://kubernetes.default.svc
     namespace: myapp
