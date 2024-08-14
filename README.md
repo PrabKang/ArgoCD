@@ -15,6 +15,16 @@ kubectl port-forward service/argocd-server -n argocd 8080:443
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
 ```
 
+### Kubectl Dev Enviroment
+```
+kubectl apply -f appplication.yaml
+```
+
+### Kubectl Prod Enviroment
+```
+kubectl apply -f appplication-prod.yaml
+```
+
 # Install ArgoCD CLI / Login via CLI
 ```
 brew install argocd
