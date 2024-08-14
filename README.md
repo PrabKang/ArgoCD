@@ -25,7 +25,7 @@ kubectl apply -f appplication.yaml
 kubectl apply -f appplication-prod.yaml
 ```
 
-# Install ArgoCD CLI / Login via CLI
+# Install ArgoCD CLI / Login via CLI (MacOS)
 ```
 brew install argocd
 kubectl port-forward svc/argocd-server -n argocd 8080:443
