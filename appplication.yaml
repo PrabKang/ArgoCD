@@ -7,7 +7,7 @@ spec:
   project: default                            # The ArgoCD project this Application belongs to. Projects help manage multiple applications within ArgoCD.
 
   source:                                     # Defines the source repository and the specifics of what to deploy.
-    repoURL: https://github.com/PrabKang/juice-shop-helm.git  # The Git repository URL where the application's manifests are stored.
+    repoURL: https://github.com/PrabKang/ArgoCD.git  # The Git repository URL where the application's manifests are stored.
     targetRevision: HEAD                      # Specifies the Git revision to use. HEAD refers to the latest commit on the default branch.
     path: dev                                 # The path within the repository where the Kubernetes manifests or Helm chart are located.
   destination:                                # Defines where the application should be deployed in the Kubernetes cluster.

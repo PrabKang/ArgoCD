@@ -7,7 +7,7 @@ spec:
   project: default
 
   source:
-    repoURL: https://github.com/PrabKang/juice-shop-helm.git
+    repoURL: https://github.com/PrabKang/ArgoCD.git
     targetRevision: HEAD
     path: prod
   destination:
