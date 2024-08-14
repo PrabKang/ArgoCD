@@ -14,7 +14,7 @@ spec:
     spec:
       containers:      # Defines the list of containers that will run in the Pods.
       - name: myapp    # The name of the container. This should be unique within the Pod.
-        image: prab/argo:0.1  # The container image to be used. The image includes the repository and tag.
+        image: nanajanashia/argocd-app:1.2  # The container image to be used. The image includes the repository and tag.
         ports:
         - containerPort: 8080 # Exposes port 8080 within the container. This is typically where the application inside the container listens for requests.
 
