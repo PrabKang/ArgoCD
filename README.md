@@ -42,7 +42,7 @@ argocd login 127.0.0.1:8080
 * kind: Specifies the type of Kubernetes resource you're defining. In this case, it's a Deployment.
 * metadata: Includes metadata about the deployment, such as its name.
 * spec: Defines the desired state of the deployment, including how many replicas (Pods) you want and how the Pods should be configured.
-selector: Matches Pods based on their labels. This ensures that the deployment knows which Pods it should manage.
+* selector: Matches Pods based on their labels. This ensures that the deployment knows which Pods it should manage.
 * replicas: Specifies the number of identical Pods that should be running.
 * template: Describes the Pods that will be created. It includes both metadata (like labels) and specifications for the containers inside the Pods.
 * containers: Lists the containers that should be running in each Pod. Each container has a name, an image, and can expose ports, among other settings.
@@ -66,5 +66,5 @@ selector: Matches Pods based on their labels. This ensures that the deployment k
 * metadata: Contains metadata like the name and namespace of the application resource.
 * spec: Specifies the desired state and configuration of the application, including the source of the application manifests, the destination where they should be deployed, and the sync policy.
 * source: Defines where the application's manifests or Helm chart are located, including the Git repository URL, the branch or commit to use, and the path within the repository.
-destination: Specifies the Kubernetes cluster and namespace where the application should be deployed.
+* destination: Specifies the Kubernetes cluster and namespace where the application should be deployed.
 * syncPolicy: Describes the synchronization behavior, including options for automatically creating namespaces, self-healing, and pruning untracked resources.
