@@ -1,20 +1,20 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: apps/v1    # Specifies the API version for the Deployment resource.
+kind: Deployment       # Declares that this resource is a Deployment.
 metadata:
-  name: myapp
+  name: myapp          # The name of the Deployment, used to uniquely identify the resource within the namespace.   
 spec:
-  selector:
+  selector:            # The selector is used to identify the Pods that are managed by this Deployment.
     matchLabels:
-      app: myapp
-  replicas: 2
-  template:
+      app: myapp       # Matches Pods with the label 'app: myapp'.
+  replicas: 2          # Specifies the number of desired Pods. In this case, two Pods will be deployed.
+  template:            # The template section describes the Pods that will be created by this Deployment.
     metadata:
       labels:
-        app: myapp
+        app: myapp     # Labels applied to the Pods created by this Deployment. This label should match the selector above.
     spec:
-      containers:
-      - name: myapp
-        image: nanajanashia/argocd-app:1.2
+      containers:      # Defines the list of containers that will run in the Pods.
+      - name: myapp    # The name of the container. This should be unique within the Pod.
+        image: nanajanashia/argocd-app:1.2  # The container image to be used. The image includes the repository and tag.
         ports:
-        - containerPort: 8080
+        - containerPort: 8080 # Exposes port 8080 within the container. This is typically where the application inside the container listens for requests.
 

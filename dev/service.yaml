@@ -1,11 +1,12 @@
-apiVersion: v1
-kind: Service
+apiVersion: v1          # Specifies the API version for the Service resource.
+kind: Service           # Declares that this resource is a Service.
 metadata:
-  name: myapp-service
+  name: myapp-service   # The name of the Service, used to uniquely identify the resource within the namespace.
 spec:
   selector:
-    app: myapp
-  ports:
-  - port: 8080
-    protocol: TCP
-    targetPort: 8080
+    app: myapp          # The selector is used to identify which Pods the Service should forward traffic to. It matches Pods with the label 'app: myapp'.
+  ports:                # Defines the list of ports that this Service will expose.
+  - port: 8080          # The port that the Service will expose to other resources. Externally, the Service will listen on this port.
+    protocol: TCP       # Specifies the protocol used by the Service. The default is TCP.
+    targetPort: 8080    # The port on the Pods that the traffic should be forwarded to. This is the port where the application inside the Pod listens.
+

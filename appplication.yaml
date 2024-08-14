@@ -1,23 +1,23 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Application 
+apiVersion: argoproj.io/v1alpha1              # Specifies the API version for the ArgoCD Application resource.
+kind: Application                             # Declares that this resource is an ArgoCD Application.
 metadata:
-  name: myapp-argo-application-dev
-  namespace: argocd
+  name: myapp-argo-application-dev            # The name of the Application resource, used to uniquely identify it within the namespace.
+  namespace: argocd                           # The namespace where the Application resource is deployed, typically where ArgoCD is installed.
 spec:
-  project: default
+  project: default                            # The ArgoCD project this Application belongs to. Projects help manage multiple applications within ArgoCD.
 
-  source:
-    repoURL: https://github.com/PrabKang/juice-shop-helm.git
-    targetRevision: HEAD
-    path: dev
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: myappdev
+  source:                                     # Defines the source repository and the specifics of what to deploy.
+    repoURL: https://github.com/PrabKang/juice-shop-helm.git  # The Git repository URL where the application's manifests are stored.
+    targetRevision: HEAD                      # Specifies the Git revision to use. HEAD refers to the latest commit on the default branch.
+    path: dev                                 # The path within the repository where the Kubernetes manifests or Helm chart are located.
+  destination:                                # Defines where the application should be deployed in the Kubernetes cluster.
+    server: https://kubernetes.default.svc    # The Kubernetes API server URL. The default value (`https://kubernetes.default.svc`) indicates the in-cluster API server.
+    namespace: myappdev                       # The Kubernetes namespace where the application will be deployed.
 
-  syncPolicy:
+  syncPolicy:                                 # Defines the sync policy for this application.
     syncOptions:
-    - CreateNameSpace=true
+    - CreateNameSpace=true                    # This option ensures that the namespace defined in the destination is created if it doesn't already exist.
 
-    automated:
-      selfHeal: true
-      prune: true
+    automated:                                # Specifies that sync is automated.
+      selfHeal: true                          # Enables self-healing, which automatically corrects any drift between the desired state (Git) and the live state.
+      prune: true                             # Automatically removes (prunes) resources that are no longer tracked by the Git repository.
