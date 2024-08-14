@@ -10,6 +10,11 @@ kubectl get services -n argocd
 kubectl port-forward service/argocd-server -n argocd 8080:443
 ```
 
+### Local Host
+```
+https://localhost:8080/
+```
+
 ### Get Credentials
 ```
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
