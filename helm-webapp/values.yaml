@@ -1,0 +1,12 @@
+appName: myhelmapp
+
+port: 80
+
+configmap:
+  name: myhelmapp-configmap-v1
+  data:
+    CUSTOM_HEADER: 'deployed with helm'
+
+image:
+  name: harbor.byhiras.co.uk/legacy-container-registry/prabkang/dockerk8s
+  tag: 0.1 

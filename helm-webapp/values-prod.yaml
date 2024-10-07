@@ -1,0 +1,6 @@
+
+replicas: 1
+
+configmap:
+  data:
+    CUSTOM_HEADER: 'PROD environment!'
